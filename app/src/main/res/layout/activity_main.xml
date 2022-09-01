@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <FrameLayout
+       android:id="@+id/id_frame_layout"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toTopOf="@id/id_brush_btn"
+       app:layout_constraintTop_toTopOf="parent"
+       android:layout_margin="5dp"
+       android:background="@drawable/background_drawing_view"
+       android:padding="1dp"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       >
+
+      <ImageView
+          android:id="@+id/id_background_image"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="centerCrop"
+          />
+
+      <com.example.mydrawingapp.DrawingView
+          android:id="@+id/drawing_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#80FFFFFF"
+          />
+
+   </FrameLayout>
+
+
+
+   <ImageButton
+       android:id="@+id/id_brush_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/brush_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_addImage_btn"
+       app:layout_constraintStart_toEndOf="@id/id_removeBackground_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_paintBucket_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/paint_bucket_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_removeBackground_btn"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_removeBackground_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/remove_background_image_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_brush_btn"
+       app:layout_constraintStart_toEndOf="@id/id_paintBucket_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_addImage_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/image_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_undo_btn"
+       app:layout_constraintStart_toEndOf="@id/id_brush_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_undo_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/undo_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_redo_btn"
+       app:layout_constraintStart_toEndOf="@id/id_addImage_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_redo_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/redo_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_clear_btn"
+       app:layout_constraintStart_toEndOf="@id/id_undo_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_clear_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/clear_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toStartOf="@id/id_save_btn"
+       app:layout_constraintStart_toEndOf="@id/id_redo_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+   <ImageButton
+       android:id="@+id/id_save_btn"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:scaleType="fitXY"
+       android:src="@drawable/save_icon"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toEndOf="@id/id_clear_btn"
+       app:layout_constraintTop_toBottomOf="@id/id_frame_layout"
+       app:layout_constraintVertical_bias="1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
