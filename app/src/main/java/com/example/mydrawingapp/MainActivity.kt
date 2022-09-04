@@ -221,7 +221,7 @@ class MainActivity : AppCompatActivity() {
                     val bytes = ByteArrayOutputStream()
                     mBitmap.compress(Bitmap.CompressFormat.PNG, 90, bytes)
 
-                    val f = File(Environment.DIRECTORY_DOWNLOADS +
+                    val f = File(externalCacheDir?.absoluteFile.toString() + File.separator + "Drawing App" +
                         System.currentTimeMillis()/1000 + ".png")
 
                     val fo = FileOutputStream(f)
@@ -235,7 +235,7 @@ class MainActivity : AppCompatActivity() {
                         if(result.isNotEmpty()) {
                             Toast.makeText(this@MainActivity, "File Saved Successfully $result",
                                 Toast.LENGTH_LONG).show()
-                            shareImage(result)
+                            //shareImage(result)
                         }
                         else {
                             Toast.makeText(this@MainActivity, "File Not Saved, Something went wrong",
@@ -266,16 +266,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun shareImage(result : String) {
-        MediaScannerConnection.scanFile(this, arrayOf(result), null) {
-            path, uri ->
-            val shareIntent = Intent()
-             shareIntent.action = ACTION_SEND
-            shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
-            shareIntent.type = "image/png"
-            startActivity(Intent.createChooser(shareIntent, "Share Image") )
-        }
-    }
+//    private fun shareImage(result : String) {
+//        MediaScannerConnection.scanFile(this, arrayOf(result), null) {
+//            path, uri ->
+//            val shareIntent = Intent()
+//             shareIntent.action = ACTION_SEND
+//            shareIntent.putExtra(Intent.EXTRA_STREAM, uri)
+//            shareIntent.type = "image/png"
+//            startActivity(Intent.createChooser(shareIntent, "Share Image") )
+//        }
+   // }
 
 
 }
